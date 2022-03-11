@@ -24,6 +24,18 @@ contract ERC721 {
     // mapping from owner to number of owned tokens
     mapping(address => uint256) private _ownedTokens;
 
+    // balance of function to get balance return number of tokens owned by an owner
+    function balanceOf(address _owner) public view returns(uint256) {
+        require(_owner != address(0), "Error, query on nonexistent address");
+        return _ownedTokens[_owner];
+    }
+
+    // owner of function returns the owner of an NFT token id
+    function ownerOf(uint256 _tokenId) external view returns (address) {
+        address owner = _tokenOwner[_tokenId];
+        return owner;
+    }
+
     function _exists(uint256 tokenId) internal view returns(bool) {
         // try to access owner of token and if exists returns true, not false
         address owner = _tokenOwner[tokenId];
