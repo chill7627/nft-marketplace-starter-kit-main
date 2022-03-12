@@ -43,7 +43,7 @@ contract ERC721 {
         return owner != address(0);
     }
 
-    function _mint(address to, uint256 tokenId) internal {
+    function _mint(address to, uint256 tokenId) internal virtual {
         // require the address is not blank
         require(to != address(0), "ERC721: minting to zero address");
         // require that token hasn't been minted already
