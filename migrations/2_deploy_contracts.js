@@ -1,4 +1,4 @@
-const KryptoBird = artifacts.require("Kryptobird");
+const KryptoBird = artifacts.require("KryptoBird");
 // grabs json object KryptoBird and assigns it to Krypto bird const
 
 // deploys contract deployer (KryptoBird in this instant)

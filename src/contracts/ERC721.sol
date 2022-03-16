@@ -23,6 +23,8 @@ contract ERC721 {
     mapping(uint256 => address) private _tokenOwner;
     // mapping from owner to number of owned tokens
     mapping(address => uint256) private _ownedTokens;
+    // tokens sent over need to keep track of approval process, tokenId to address
+    mapping(uint256 => address) private _tokenApprovals;
 
     // balance of function to get balance return number of tokens owned by an owner
     function balanceOf(address _owner) public view returns(uint256) {
@@ -55,6 +57,25 @@ contract ERC721 {
 
         // emit transfer event
         emit Transfer(address(0), to, tokenId);
+    }
+
+    // function to transefer a token from sender to receiver 
+    function _transferFrom(address _from, address _to, uint256 _tokenId) internal {
+        require(_to != address(0), "Error, ERC721 transfer to the zero address.");
+        require(_from == _tokenOwner[_tokenId], "Error, sending address does not own token!");
+        // change _tokenOwner fo _tokenId to the new _to address
+        _tokenOwner[_tokenId] = _to;
+        // remove one owned token from the from ownedtokens count
+        _ownedTokens[_from]--;
+        // add one owned token to the to ownedtokens count
+        _ownedTokens[_to]++;
+
+        // emit transfer emit
+        emit Transfer(_from, _to, _tokenId);
+    }
+
+    function transferFrom(address _from, address _to, uint256 _tokenId) public {
+        _transferFrom(_from, _to, _tokenId);
     }
     
 }
