@@ -18,6 +18,10 @@ contract ERC721 {
     event Transfer(address indexed from,
                    address indexed to, 
                    uint256 indexed tokenId);
+    
+    event Approval(address indexed owner,
+                   address indexed approved,
+                   uint256 tokenId);
 
     // mapping from token id to owner
     mapping(uint256 => address) private _tokenOwner;
@@ -33,7 +37,7 @@ contract ERC721 {
     }
 
     // owner of function returns the owner of an NFT token id
-    function ownerOf(uint256 _tokenId) external view returns (address) {
+    function ownerOf(uint256 _tokenId) public view returns (address) {
         require(_exists(_tokenId), "Error, owner query for nonexistent token");
         address owner = _tokenOwner[_tokenId];
         return owner;
@@ -75,7 +79,33 @@ contract ERC721 {
     }
 
     function transferFrom(address _from, address _to, uint256 _tokenId) public {
+        require(_isApprovedOrOwner(_to, _tokenId), "Error, spender is not approved or owner");
         _transferFrom(_from, _to, _tokenId);
+    }
+
+    // require that approver is the owner
+    // approve an address to a tokenId (token)
+    // require that we can't send tokens of the owner to the owner (current caller)
+    // update mapping of _tokenApprovals
+    function approve(address _to, uint256 tokenId) public {
+        address owner = ownerOf(tokenId);
+        require(_to != owner, "Error, token transfer approval to current owner!");
+        require(msg.sender == owner, "Error, current caller is not the owner of the token!");
+        _tokenApprovals[tokenId] = _to;
+        emit Approval(owner, _to, tokenId);
+    }
+
+    function _isApprovedOrOwner(address spender, uint256 tokenId) internal view returns(bool) {
+        require(_exists(tokenId), "Error, token does not exist");
+        address owner = ownerOf(tokenId);
+        return(spender == owner || getApproved(tokenId) == spender);
+    }
+    
+    // returns the approved send to address for the tokenId
+    function getApproved(uint256 tokenId) public view returns (address) {
+        require(_exists(tokenId), "ERC721: approved query for nonexistent token");
+
+        return _tokenApprovals[tokenId];
     }
     
 }
