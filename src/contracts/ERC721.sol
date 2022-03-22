@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+import './ERC165.sol';
+
 /*
     building out a mint function
        a. nft to point to an address
@@ -12,7 +14,7 @@ pragma solidity ^0.8.0;
         where it is being minted to, the id
 */
 
-contract ERC721 {
+contract ERC721 is ERC165 {
 
     // events for logging purposes
     event Transfer(address indexed from,
