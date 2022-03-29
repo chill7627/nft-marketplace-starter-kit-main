@@ -55,4 +55,23 @@ contract('KryptoBird', (accounts) => {
             await contract.mint('https...1').should.be.rejected
         })
     })
+
+    describe('indexing', async() => {
+        it('lists KryptoBirdz', async() => {
+            //mint 3 more tokens
+            await contract.mint('https...2');
+            await contract.mint('https...3');
+            await contract.mint('https...4');
+            const totalSupply = await contract.totalSupply()
+
+            // loop through and list grab KBirdz form list
+            let result = [];
+            let KryptoBird;
+            for(i=1;i<totalSupply;i++) {
+                KryptoBird = await contract.kryptoBirdz(i-1);
+                result.push(KryptoBird);
+            }
+            // test that minted tokens are actually showing up in minted array
+        })
+    })
 })
