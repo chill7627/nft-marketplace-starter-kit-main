@@ -30,11 +30,15 @@ contract('KryptoBird', (accounts) => {
             assert.notEqual(address, 0x0);
         })
 
-        it('deploys successfully', async() => {
-            // check to see that name and symbol match required
+        it('has a name', async() => {
+            // check to see that name match required
             const name = await contract.name();
-            const symbol = await contract.symbol();
             assert.equal(name, 'KryptoBird');
+        })
+
+        it('has a symbol', async() => {
+            // check to see that symbol match required
+            const symbol = await contract.symbol();
             assert.equal(symbol, 'KBIRDZ');
         })
     })
@@ -67,11 +71,16 @@ contract('KryptoBird', (accounts) => {
             // loop through and list grab KBirdz form list
             let result = [];
             let KryptoBird;
-            for(i=1;i<totalSupply;i++) {
+            for(i=1;i<=totalSupply;i++) {
                 KryptoBird = await contract.kryptoBirdz(i-1);
                 result.push(KryptoBird);
             }
             // test that minted tokens are actually showing up in minted array
+            // assert that new array results will equal expected results
+            let expected = ['https...1', 'https...2', 'https...3', 'https...4'];
+            result = result.join(',');
+            expected = expected.join(',');
+            assert.equal(result, expected);
         })
     })
 })
