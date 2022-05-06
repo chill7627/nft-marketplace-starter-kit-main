@@ -11919,6 +11919,774 @@
     ],
     "src": "33:886:5"
   },
+  "legacyAST": {
+    "absolutePath": "project:/src/contracts/KryptoBirdz.sol",
+    "exportedSymbols": {
+      "ERC165": [
+        53
+      ],
+      "ERC721": [
+        314
+      ],
+      "ERC721Connector": [
+        335
+      ],
+      "ERC721Enumerable": [
+        507
+      ],
+      "ERC721Metadata": [
+        567
+      ],
+      "IERC165": [
+        691
+      ],
+      "IERC721": [
+        733
+      ],
+      "IERC721Enumerable": [
+        757
+      ],
+      "IERC721Metadata": [
+        770
+      ],
+      "KryptoBird": [
+        627
+      ]
+    },
+    "id": 628,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 569,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:5"
+      },
+      {
+        "absolutePath": "project:/src/contracts/ERC721Connector.sol",
+        "file": "./ERC721Connector.sol",
+        "id": 570,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 628,
+        "sourceUnit": 336,
+        "src": "60:31:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 571,
+              "name": "ERC721Connector",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 335,
+              "src": "118:15:5"
+            },
+            "id": 572,
+            "nodeType": "InheritanceSpecifier",
+            "src": "118:15:5"
+          }
+        ],
+        "canonicalName": "KryptoBird",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 627,
+        "linearizedBaseContracts": [
+          627,
+          335,
+          507,
+          757,
+          314,
+          733,
+          567,
+          53,
+          691,
+          770
+        ],
+        "name": "KryptoBird",
+        "nameLocation": "104:10:5",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "93ab6e56",
+            "id": 575,
+            "mutability": "mutable",
+            "name": "kryptoBirdz",
+            "nameLocation": "219:11:5",
+            "nodeType": "VariableDeclaration",
+            "scope": 627,
+            "src": "203:27:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+              "typeString": "string[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 573,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "203:6:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "id": 574,
+              "nodeType": "ArrayTypeName",
+              "src": "203:8:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                "typeString": "string[]"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 579,
+            "mutability": "mutable",
+            "name": "_kryptoBirdzExists",
+            "nameLocation": "298:18:5",
+            "nodeType": "VariableDeclaration",
+            "scope": 627,
+            "src": "274:42:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_bool_$",
+              "typeString": "mapping(string => bool)"
+            },
+            "typeName": {
+              "id": 578,
+              "keyType": {
+                "id": 576,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "282:6:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "274:23:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_bool_$",
+                "typeString": "mapping(string => bool)"
+              },
+              "valueType": {
+                "id": 577,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "292:4:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 617,
+              "nodeType": "Block",
+              "src": "373:470:5",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 588,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "392:32:5",
+                        "subExpression": {
+                          "baseExpression": {
+                            "id": 585,
+                            "name": "_kryptoBirdzExists",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 579,
+                            "src": "393:18:5",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_bool_$",
+                              "typeString": "mapping(string memory => bool)"
+                            }
+                          },
+                          "id": 587,
+                          "indexExpression": {
+                            "id": 586,
+                            "name": "_kryptoBird",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 581,
+                            "src": "412:11:5",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "393:31:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4572726f72206b727970746f4269726420616c726561647920657869737473",
+                        "id": 589,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "435:33:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_692da9b9dce4781c2331fc23204a61884a33ddc5cb1ad46c4c9286a2e51c8b4a",
+                          "typeString": "literal_string \"Error kryptoBird already exists\""
+                        },
+                        "value": "Error kryptoBird already exists"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_692da9b9dce4781c2331fc23204a61884a33ddc5cb1ad46c4c9286a2e51c8b4a",
+                          "typeString": "literal_string \"Error kryptoBird already exists\""
+                        }
+                      ],
+                      "id": 584,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "384:7:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 590,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "384:85:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 591,
+                  "nodeType": "ExpressionStatement",
+                  "src": "384:85:5"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 595,
+                        "name": "_kryptoBird",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 581,
+                        "src": "663:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "id": 592,
+                        "name": "kryptoBirdz",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 575,
+                        "src": "646:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                          "typeString": "string storage ref[] storage ref"
+                        }
+                      },
+                      "id": 594,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "src": "646:16:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_string_storage_$dyn_storage_ptr_$_t_string_storage_$returns$__$bound_to$_t_array$_t_string_storage_$dyn_storage_ptr_$",
+                        "typeString": "function (string storage ref[] storage pointer,string storage ref)"
+                      }
+                    },
+                    "id": 596,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "646:29:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 597,
+                  "nodeType": "ExpressionStatement",
+                  "src": "646:29:5"
+                },
+                {
+                  "assignments": [
+                    599
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 599,
+                      "mutability": "mutable",
+                      "name": "_id",
+                      "nameLocation": "691:3:5",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 617,
+                      "src": "686:8:5",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 598,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "686:4:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 604,
+                  "initialValue": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 603,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "expression": {
+                        "id": 600,
+                        "name": "kryptoBirdz",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 575,
+                        "src": "697:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                          "typeString": "string storage ref[] storage ref"
+                        }
+                      },
+                      "id": 601,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "src": "697:18:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "-",
+                    "rightExpression": {
+                      "hexValue": "31",
+                      "id": 602,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "718:1:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "697:22:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "686:33:5"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 606,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967281,
+                          "src": "736:3:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 607,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "736:10:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 608,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 599,
+                        "src": "748:3:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 605,
+                      "name": "_mint",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        453
+                      ],
+                      "referencedDeclaration": 453,
+                      "src": "730:5:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256)"
+                      }
+                    },
+                    "id": 609,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "730:22:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 610,
+                  "nodeType": "ExpressionStatement",
+                  "src": "730:22:5"
+                },
+                {
+                  "expression": {
+                    "id": 615,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 611,
+                        "name": "_kryptoBirdzExists",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 579,
+                        "src": "797:18:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_bool_$",
+                          "typeString": "mapping(string memory => bool)"
+                        }
+                      },
+                      "id": 613,
+                      "indexExpression": {
+                        "id": 612,
+                        "name": "_kryptoBird",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 581,
+                        "src": "816:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "797:31:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "74727565",
+                      "id": 614,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "831:4:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "797:38:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 616,
+                  "nodeType": "ExpressionStatement",
+                  "src": "797:38:5"
+                }
+              ]
+            },
+            "functionSelector": "d85d3d27",
+            "id": 618,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nameLocation": "334:4:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 582,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 581,
+                  "mutability": "mutable",
+                  "name": "_kryptoBird",
+                  "nameLocation": "353:11:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 618,
+                  "src": "339:25:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 580,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "339:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "338:27:5"
+            },
+            "returnParameters": {
+              "id": 583,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "373:0:5"
+            },
+            "scope": 627,
+            "src": "325:518:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 625,
+              "nodeType": "Block",
+              "src": "904:10:5",
+              "statements": []
+            },
+            "id": 626,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "hexValue": "4b727970746f42697264",
+                    "id": 621,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "881:12:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_a7749e58ce841900bf41fb7b2c6c167f24e4715b3b8ad39267d6dc2c199dd1f9",
+                      "typeString": "literal_string \"KryptoBird\""
+                    },
+                    "value": "KryptoBird"
+                  },
+                  {
+                    "hexValue": "4b424952445a",
+                    "id": 622,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "894:8:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_1c2e4ec8c8ce86463b0e138397555830f497eb98ddeeab4f9180611e2028ae19",
+                      "typeString": "literal_string \"KBIRDZ\""
+                    },
+                    "value": "KBIRDZ"
+                  }
+                ],
+                "id": 623,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 620,
+                  "name": "ERC721Connector",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 335,
+                  "src": "865:15:5"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "865:38:5"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 619,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "862:2:5"
+            },
+            "returnParameters": {
+              "id": 624,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "904:0:5"
+            },
+            "scope": 627,
+            "src": "851:63:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 628,
+        "src": "95:824:5",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:886:5"
+  },
   "compiler": {
     "name": "solc",
     "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
@@ -11927,12 +12695,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x13DA6E0680620F1Ccd4c569ca0BC365480FddF04",
-      "transactionHash": "0xa46ddbcd6580b9de38ef2b4d1e2d6323086fd90f726803042fc3b7247e298c5d"
+      "address": "0x1Ef5b6D215F169f680C0599a1cDC701C9fE76314",
+      "transactionHash": "0xbfc572d37663b0552a5edf9313f340d4f5357df5fb7d3c13265fbd3feb3b004a"
     }
   },
-  "schemaVersion": "3.4.7",
-  "updatedAt": "2022-04-10T19:40:14.915Z",
+  "schemaVersion": "3.4.5",
+  "updatedAt": "2022-05-06T01:37:38.516Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

@@ -10279,13 +10279,266 @@
     ],
     "src": "33:343:2"
   },
+  "legacyAST": {
+    "absolutePath": "project:/src/contracts/ERC721Connector.sol",
+    "exportedSymbols": {
+      "ERC165": [
+        53
+      ],
+      "ERC721": [
+        314
+      ],
+      "ERC721Connector": [
+        335
+      ],
+      "ERC721Enumerable": [
+        507
+      ],
+      "ERC721Metadata": [
+        567
+      ],
+      "IERC165": [
+        691
+      ],
+      "IERC721": [
+        733
+      ],
+      "IERC721Enumerable": [
+        757
+      ],
+      "IERC721Metadata": [
+        770
+      ]
+    },
+    "id": 336,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 316,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:2"
+      },
+      {
+        "absolutePath": "project:/src/contracts/ERC721Metadata.sol",
+        "file": "./ERC721Metadata.sol",
+        "id": 317,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 336,
+        "sourceUnit": 568,
+        "src": "60:30:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/src/contracts/ERC721Enumerable.sol",
+        "file": "./ERC721Enumerable.sol",
+        "id": 318,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 336,
+        "sourceUnit": 508,
+        "src": "92:32:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 319,
+              "name": "ERC721Metadata",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 567,
+              "src": "156:14:2"
+            },
+            "id": 320,
+            "nodeType": "InheritanceSpecifier",
+            "src": "156:14:2"
+          },
+          {
+            "baseName": {
+              "id": 321,
+              "name": "ERC721Enumerable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 507,
+              "src": "172:16:2"
+            },
+            "id": 322,
+            "nodeType": "InheritanceSpecifier",
+            "src": "172:16:2"
+          }
+        ],
+        "canonicalName": "ERC721Connector",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 335,
+        "linearizedBaseContracts": [
+          335,
+          507,
+          757,
+          314,
+          733,
+          567,
+          53,
+          691,
+          770
+        ],
+        "name": "ERC721Connector",
+        "nameLocation": "137:15:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 333,
+              "nodeType": "Block",
+              "src": "363:10:2",
+              "statements": []
+            },
+            "id": 334,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 329,
+                    "name": "name",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 324,
+                    "src": "349:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  {
+                    "id": 330,
+                    "name": "symbol",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 326,
+                    "src": "355:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  }
+                ],
+                "id": 331,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 328,
+                  "name": "ERC721Metadata",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 567,
+                  "src": "333:14:2"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "333:29:2"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 327,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 324,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "305:4:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 334,
+                  "src": "291:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 323,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "291:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 326,
+                  "mutability": "mutable",
+                  "name": "symbol",
+                  "nameLocation": "325:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 334,
+                  "src": "311:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 325,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "311:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "290:42:2"
+            },
+            "returnParameters": {
+              "id": 332,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "363:0:2"
+            },
+            "scope": 335,
+            "src": "279:94:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 336,
+        "src": "128:248:2",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:343:2"
+  },
   "compiler": {
     "name": "solc",
     "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.7",
-  "updatedAt": "2022-04-10T19:40:09.022Z",
+  "schemaVersion": "3.4.5",
+  "updatedAt": "2022-05-06T01:37:26.444Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
