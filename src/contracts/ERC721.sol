@@ -3,6 +3,7 @@ pragma solidity ^0.8.0;
 
 import './ERC165.sol';
 import './interfaces/IERC721.sol';
+import './Libraries/Counters.sol';
 
 /*
     building out a mint function
@@ -16,11 +17,13 @@ import './interfaces/IERC721.sol';
 */
 
 contract ERC721 is ERC165, IERC721 {
+    using SafeMath for uint256;
+    using Counters for Counters.Counter;
 
     // mapping from token id to owner
     mapping(uint256 => address) private _tokenOwner;
     // mapping from owner to number of owned tokens
-    mapping(address => uint256) private _ownedTokens;
+    mapping(address => Counters.Counter) private _ownedTokens;
     // tokens sent over need to keep track of approval process, tokenId to address
     mapping(uint256 => address) private _tokenApprovals;
 
@@ -33,7 +36,7 @@ contract ERC721 is ERC165, IERC721 {
     // balance of function to get balance return number of tokens owned by an owner
     function balanceOf(address _owner)  public override view returns(uint256) {
         require(_owner != address(0), "Error, query on nonexistent address");
-        return _ownedTokens[_owner];
+        return _ownedTokens[_owner].current();
     }
 
     // owner of function returns the owner of an NFT token id
@@ -59,7 +62,7 @@ contract ERC721 is ERC165, IERC721 {
         // add address to owner of token id
         _tokenOwner[tokenId] = to;
         // add 1 to owned token counts for address
-        _ownedTokens[to] += 1;
+        _ownedTokens[to].increment();
 
         // emit transfer event
         emit Transfer(address(0), to, tokenId);
@@ -73,9 +76,9 @@ contract ERC721 is ERC165, IERC721 {
         // change _tokenOwner fo _tokenId to the new _to address
         _tokenOwner[_tokenId] = _to;
         // remove one owned token from the from ownedtokens count
-        _ownedTokens[_from]--;
+        _ownedTokens[_from].decrement();
         // add one owned token to the to ownedtokens count
-        _ownedTokens[_to]++;
+        _ownedTokens[_to].increment();
 
         // emit transfer emit
         emit Transfer(_from, _to, _tokenId);
